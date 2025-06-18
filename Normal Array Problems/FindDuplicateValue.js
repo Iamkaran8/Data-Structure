@@ -1,3 +1,6 @@
+//Find And Print Duplicate Value Of An Array og Object
+
+
 const people = [
     {
         name: "Alice",
@@ -28,11 +31,10 @@ const people = [
 
 const FindDuplicate = (arr) => {
     const unique = new Set();
-
     for (val of arr) {
-        if(unique.has(val.age)){
+        if (unique.has(val.age)) {
             console.log("alread Exist :", val)
-        }else{
+        } else {
             unique.add(val.age)
         }
     }
