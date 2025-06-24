@@ -5,9 +5,9 @@ const uniqueValue = (arr) => {
             var i = i + 1;
             arr[i] = arr[j]
         }
-        
+
     }
-    return i+1
+    return i + 1
 }
 
 
