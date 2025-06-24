@@ -21,24 +21,24 @@ console.log(sumOfTwoVal([1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]))
 
 // This is Effecient Way
 
-const Effecient = (arr,target) => {
+const Effecient = (arr, target) => {
     console.log("---------------Efficient Way---------------")
     let left = 0;
-    let right = arr.length -1;
-    while(left < right){
+    let right = arr.length - 1;
+    while (left < right) {
         let sum = arr[left] + arr[right];
-        if(sum === target) {
-            return arr[left],arr[right]
+        if (sum === target) {
+            return arr[left], arr[right]
 
         };
-        if(sum <target) left++;
+        if (sum < target) left++;
         else right++
     }
     console.log("No Pair FOund")
 }
 
 
-console.log(Effecient([1, 2, 3, 4, 5, 6, 7, 8,],10))
+console.log(Effecient([1, 2, 3, 4, 5, 6, 7, 8,], 10))
 
 
 
