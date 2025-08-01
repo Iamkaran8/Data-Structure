@@ -256,8 +256,8 @@
 
 
 
-class Node{
-    constructor(data){
+class Node {
+    constructor(data) {
         this.data = data;
         this.next = null
     }
@@ -265,30 +265,43 @@ class Node{
 
 
 class LinkedList {
-    constructor(){
+    constructor() {
         this.head = null;
     }
 
 
-    addFirst(data){
+    addFirst(data) {
         const newNode = new Node(data);
         newNode.next = this.head;
         this.head = newNode;
     }
 
-    addLast(data){
+    addLast(data) {
         const newNode = new Node(data);
         let current = this.head;
-        while(current.next !== null){
+        while (current.next !== null) {
             current = current.next
         }
         current.next = newNode
     }
 
+    addAtIndex(index, data) {
+        const newNode = new Node(data);
+        let current = this.head
+        for (let i = 0; i < index - 1; i++) {
+            current = current.next
+        }
+        newNode.next = current.next;
+        current.next = newNode
+    }
 
-    print(){
+    removeFirst() {
+        this.head = this.head.next
+    }
+
+    print() {
         let current = this.head;
-        while(current){
+        while (current) {
             console.log(current.data);
             current = current.next
         }
@@ -298,7 +311,10 @@ class LinkedList {
 
 const list = new LinkedList();
 list.addFirst(100);
+
 list.addFirst(10);
 list.addFirst(90);
 list.addFirst(101);
+list.addAtIndex(2, 2)
+list.removeFirst()
 list.print()
